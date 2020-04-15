@@ -33,7 +33,7 @@ namespace LudoGameEngine
             {
                 ioController.ShowMessage($"Player {i}:");
                 var player = new LudoPlayer();
-                player.Number = i;
+                player.Index = i;
                 player.PlayerName = ioController.GetStringFromMessage($"What is the name of Player {i}:");
                 player.Color = ioController.GetStringFromMessage($"What color is player {i}:");
                 players.Add(player);

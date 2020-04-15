@@ -6,7 +6,11 @@ namespace LudoGameEngine
     public class LudoGame
     {
         public Guid GameGuid { get; set; }
+        private int currentPlayerIndex = 0;
+        public LudoPlayer CurrentPlayer { get { return ludoplayers[currentPlayerIndex]; } }
+
         private GameBoard gameBoard;
+        private LudoPlayer[] ludoplayers;
 
         public LudoPlayer StartGame(params LudoPlayer[] ludoplayers)
         {
@@ -17,14 +21,14 @@ namespace LudoGameEngine
 
             GameGuid = Guid.NewGuid();
             gameBoard = new GameBoard();
-            
-            
+            this.ludoplayers = ludoplayers;
+
             foreach (var player in ludoplayers)
             {
                 gameBoard.AddPiecesWithPlayer(player);
             }
 
-            return ludoplayers[0];
+            return CurrentPlayer;
         }
 
 

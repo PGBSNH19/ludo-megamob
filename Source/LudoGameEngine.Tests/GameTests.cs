@@ -56,7 +56,7 @@ namespace LudoGameEngine.Tests
         [Fact]
         public void StartGame_StartsLudoGameWithTwoPlayer_CurrentPlayerIsPlayer1()
         {
-            // Arrangea
+            // Arrange
             LudoPlayer lp1 = new LudoPlayer("player1");
             LudoPlayer lp2 = new LudoPlayer("player2");
             LudoGame sut = new LudoGame();
@@ -99,6 +99,22 @@ namespace LudoGameEngine.Tests
 
             // Assert
             Assert.NotEqual(Guid.Empty, sut.GameGuid);
+
+        }
+
+        [Fact]
+        public void CurrentPlayer_StartsLudoGameWithTwoPlayers_CurrentPlayerIsPlayer1()
+        {
+            // Arrange
+            LudoPlayer lp1 = new LudoPlayer("player1");
+            LudoPlayer lp2 = new LudoPlayer("player2");
+            LudoGame sut = new LudoGame();
+
+            // Act
+            sut.StartGame(lp1, lp2);
+
+            // Assert
+            Assert.Equal("player1", sut.CurrentPlayer.PlayerName);
 
         }
 
