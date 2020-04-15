@@ -42,7 +42,7 @@ As a ludo-player, I want to be able to roll the dice, so I can move a game piece
 
 As a ludo-player, I want to be able to choose which piece in the game to move.
 
-As a ludo-player, I want to be able to "knock over" a opponent gamepiece, so that game piece gets returned to the home of the player when landing on the same tile this happens when two peices are at the same position (*collision position*).
+As a ludo-player, I want to be able to "knock over" a opponent gamepiece, so that game piece gets returned to the home of the player when landing on the same tile this happens when two pieces are at the same position (*collision position*).
 
 As a ludo-player, I want to be able to move my game piece to the *goal position*, so I can get points.
 
@@ -50,6 +50,10 @@ As a ludo-player, I want to be able to keep track of how many points all players
 
 As a ludo player I want to be declared as the winner when reaching 4 points
 
-As a ludo player I want to be allowed to move a game peice from home to the gameboard start position when hitting 1 or 6 with a dice, if the start position is empty
+As a ludo player I want to be allowed to move a game piece from home to the gameboard start position when hitting 1 or 6 with a dice, if the start position is empty, only one can be taken out
 
 As a ludo player if I het 6 with the dice will I be given an extra roll
+
+## Rules
+
+Only one player can be at one tile

@@ -9,6 +9,8 @@ namespace LudoGameEngine
         private int currentPlayerIndex = 0;
         public LudoPlayer CurrentPlayer { get { return ludoplayers[currentPlayerIndex]; } }
 
+        public PlayerTurn CurrentTurn { get { return new PlayerTurn(CurrentPlayer, gameBoard); } }
+
         private GameBoard gameBoard;
         private LudoPlayer[] ludoplayers;
 
