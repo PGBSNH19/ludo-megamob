@@ -16,5 +16,7 @@ namespace LudoGameEngine
         }
 
         public string PlayerName { get; set; }
+        public int Number { get; internal set; }
+        public string Color { get; internal set; }
     }
 }
