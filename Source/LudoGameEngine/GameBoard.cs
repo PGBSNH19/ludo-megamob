@@ -6,13 +6,11 @@ namespace LudoGameEngine
     {
         private const int NUMBER_OF_TILES_ON_BOARD = 57;
         private int lastPlayerStartTile = 0;
-        public Tile[] Tiles { get; set; }
 
         public int NumberOfTilesOnboard { get { return NUMBER_OF_TILES_ON_BOARD;  } }
 
         public GameBoard() {
             Pieces = new List<Piece>();
-            Tiles = new Tile[NUMBER_OF_TILES_ON_BOARD];
         }
 
         public List<Piece> Pieces { get; set; }

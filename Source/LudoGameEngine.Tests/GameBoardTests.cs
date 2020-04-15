@@ -21,14 +21,14 @@ namespace LudoGameEngine.Tests
             sut.AddPiecesWithPlayer(lp2);
 
             // Assert
-            Assert.Equal(0, sut.Pieces[0].TileId);
-            Assert.Equal(1, sut.Pieces[1].TileId);
-            Assert.Equal(2, sut.Pieces[2].TileId);
-            Assert.Equal(3, sut.Pieces[3].TileId);
-            Assert.Equal(57, sut.Pieces[4].TileId);
-            Assert.Equal(58, sut.Pieces[5].TileId);
-            Assert.Equal(59, sut.Pieces[6].TileId);
-            Assert.Equal(60, sut.Pieces[7].TileId);
+            Assert.Equal(-1, sut.Pieces[0].TileId);
+            Assert.Equal(-2, sut.Pieces[1].TileId);
+            Assert.Equal(-3, sut.Pieces[2].TileId);
+            Assert.Equal(-4, sut.Pieces[3].TileId);
+            Assert.Equal(-1, sut.Pieces[4].TileId);
+            Assert.Equal(-2, sut.Pieces[5].TileId);
+            Assert.Equal(-3, sut.Pieces[6].TileId);
+            Assert.Equal(-4, sut.Pieces[7].TileId);
 
         }
     }

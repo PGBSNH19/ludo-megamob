@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LudoGameEngine
@@ -15,17 +16,25 @@ namespace LudoGameEngine
 
         public Piece[] GetAvaiablePieces(int diceValue)
         {
+            List<Piece> aviablePiecesInHome = new List<Piece>();
             if (diceValue == 1 || diceValue == 6)
             {
-                return gameboard.Pieces.Where(p => p.Player == player && p.TileId < 0).ToArray();
+                aviablePiecesInHome = gameboard.Pieces.Where(p => p.Player == player && p.TileId < 0).ToList();
             }
-            int numberOfPieceOnBoard = gameboard.Tiles.Count(t => t != null && t.Piece.Player == player);
-            if (numberOfPieceOnBoard == 0)
+
+            int numberOfPieceOnBoard = gameboard.Pieces.Count(p => p.TileId >= 0 && p.Player == player);
+            if (numberOfPieceOnBoard == 0 && aviablePiecesInHome.Count == 0)
             {
                 // Nothing to move
                 return new Piece[] { };
             }
-            return null;
+
+            List<Piece> aviablePiecesOnBoard = gameboard.Pieces.Where(p => p.Player == player && p.TileId >= 0).ToList();
+
+            List<Piece> piecesWhichCanBeMoved = new List<Piece>();
+            piecesWhichCanBeMoved.AddRange(aviablePiecesOnBoard);
+            piecesWhichCanBeMoved.AddRange(aviablePiecesInHome);
+            return piecesWhichCanBeMoved.ToArray();
         }
     }
 }
