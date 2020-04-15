@@ -67,14 +67,31 @@ namespace LudoGameEngine.Tests
         public void ShowGameHistory()
         {
             //As a ludo-player, I want to be able look at game-history, to see past games.
-            throw new NotImplementedException();
+            //Arrange
+            var gameIo = new ListIOController();
+            GameInteraction gi = new GameInteraction(gameIo);
+
+            //Act
+            gameIo.Actions = new List<object>() { 0, 2, "MyFirstPlayer", "Red", "MySecondPlayer", "Green" };
+            gi.StartInteractiveLudoGame();
+            gi.ChooseMenuOption();
+            gi.ShowGameHistory();
+
+            //Assert
+            Assert.StartsWith("Showing your game history from with ID: ", gameIo.Messages[13]);
         }
 
         [Fact]
         public void LoadUnifinishedGame()
         {
             //As a ludo-player, I want to be able to load an unfinished game, to continue playing that game.
-            throw new NotImplementedException();
+
+            //Arrange
+            var gameIo = new ListIOController();
+            gameIo.Actions = new List<object>() { 0, 2, "MyFirstPlayer", "Red", "MySecondPlayer", "Green" };
+            GameInteraction gi = new GameInteraction(gameIo);
+            gi.StartInteractiveLudoGame();
+            gi.ChooseMenuOption();
         }
 
         [Fact]
@@ -155,7 +172,7 @@ namespace LudoGameEngine.Tests
         public void ExtraRollOn6()
         {
             //As a ludo player if I het 6 with the dice will I be given an extra roll
-            throw new NotImplementedException();
+            
         }
     }
 }

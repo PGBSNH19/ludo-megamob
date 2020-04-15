@@ -20,7 +20,7 @@ namespace LudoGameEngine
             ioController.ShowMessage("[2] Show history");
             return ioController.GetIntFromMessage("Choose a option:");
 
-            
+
         }
 
         private LudoGame game;
@@ -29,7 +29,7 @@ namespace LudoGameEngine
         {
             int numberOfPlayers = ioController.GetIntFromMessage("How many players [2-4]:");
             List<LudoPlayer> players = new List<LudoPlayer>();
-            for(int  i = 0; i < numberOfPlayers; i++)
+            for (int i = 0; i < numberOfPlayers; i++)
             {
                 ioController.ShowMessage($"Player {i}:");
                 var player = new LudoPlayer();
@@ -42,6 +42,11 @@ namespace LudoGameEngine
             game = new LudoGame();
             game.StartGame(players.ToArray());
             ioController.ShowMessage($"Your new game have ID: {game.GameGuid}");
+        }
+
+        public void ShowGameHistory()
+        {
+            ioController.ShowMessage($"Showing your game history from with ID: {game.GameGuid}");
         }
     }
 }
