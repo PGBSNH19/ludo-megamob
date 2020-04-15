@@ -29,12 +29,17 @@ namespace LudoGameEngine
                 return new Piece[] { };
             }
 
-            List<Piece> aviablePiecesOnBoard = gameboard.Pieces.Where(p => p.Player == player && p.TileId >= 0).ToList();
-
+            List<Piece> aviablePiecesOnBoard = gameboard.Pieces.Where(p => p.Player == player && p.TileId >= 0 && IsMoveAllowed(p.TileId, diceValue)).ToList();
             List<Piece> piecesWhichCanBeMoved = new List<Piece>();
             piecesWhichCanBeMoved.AddRange(aviablePiecesOnBoard);
             piecesWhichCanBeMoved.AddRange(aviablePiecesInHome);
             return piecesWhichCanBeMoved.ToArray();
+        }
+
+        private bool IsMoveAllowed(int position, int numberOfMoves)
+        {
+            var numberOfPiecesOnNewPosition = gameboard.Pieces.Count(p => p.TileId == position + numberOfMoves && p.Player == player);
+            return numberOfPiecesOnNewPosition == 0;
         }
     }
 }

@@ -163,6 +163,30 @@ namespace LudoGameEngine.Tests
             Assert.Equal(expectedAvaiablePieces, pieces.Length);
         }
 
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 4)]
+        [InlineData(5, 4)]
+        [InlineData(6, 4)]
+        public void GetAvaiablePieces_PlayerHaveAllPiecesOnBoard_NumberOfPiecesWhichCanBeMoved(int diceRollValue, int expectedAvaiablePieces)
+        {
+            // Arrange
+            LudoPlayer lp1 = new LudoPlayer("player1");
+            GameBoard gb = new GameBoard();
+            gb.AddPiecesWithPlayer(lp1);
+            gb.Pieces[0].TileId = 0;
+            gb.Pieces[1].TileId = 1;
+            gb.Pieces[2].TileId = 2;
+            gb.Pieces[3].TileId = 3;
+            var sut = new PlayerTurn(lp1, gb);
 
+            // Act
+            Piece[] pieces = sut.GetAvaiablePieces(diceRollValue);
+
+            // Assert
+            Assert.Equal(expectedAvaiablePieces, pieces.Length);
+        }
     }
 }
