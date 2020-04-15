@@ -42,6 +42,8 @@ namespace LudoGameEngine.Tests
 
         }
 
+
+
         [Fact]
         public void StartGame_StartsLudoGameWithNoPlayers_Exception()
         {
@@ -52,6 +54,7 @@ namespace LudoGameEngine.Tests
             Assert.Throws<Exception>(() => sut.StartGame());
 
         }
+
 
         [Fact]
         public void StartGame_StartsLudoGameWithTwoPlayer_AllPiecesAreAtPosition()
@@ -104,6 +107,25 @@ namespace LudoGameEngine.Tests
 
             // Assert
             Assert.NotEqual(Guid.Empty, sut.GameGuid);
+        }
+
+
+        [Fact]
+        public void StartGame_StartsLudoGameWithFourPlayers_GameGuidWhichIsNotEmptyGuid()
+        {
+            // Arrange
+            LudoPlayer lp1 = new LudoPlayer();
+            LudoPlayer lp2 = new LudoPlayer();
+            LudoPlayer lp3 = new LudoPlayer();
+            LudoPlayer lp4 = new LudoPlayer();
+            LudoGame sut = new LudoGame();
+
+            // Act 
+            sut.StartGame(lp1, lp2, lp3, lp4);
+
+            // Assert
+            Assert.NotEqual(Guid.Empty, sut.GameGuid);
+
         }
     }
 }
