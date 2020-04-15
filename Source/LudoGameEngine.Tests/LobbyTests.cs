@@ -57,15 +57,16 @@ namespace LudoGameEngine.Tests
 
 
         [Fact]
-        public void StartGame_StartsLudoGameWithTwoPlayer_AllPiecesAreAtPosition()
+        public void AddPiecesWithPlayer_TwoPlayers_AllPiecesAreAtPosition()
         {
             // Arrange
             LudoPlayer lp1 = new LudoPlayer();
             LudoPlayer lp2 = new LudoPlayer();
-            LudoGame sut = new LudoGame();
+            GameBoard sut = new GameBoard();
 
             // Act
-            sut.StartGame(lp1, lp2);
+            sut.AddPiecesWithPlayer(lp1);
+            sut.AddPiecesWithPlayer(lp2);
 
             // Assert
             Assert.Equal(0, sut.Pieces[0].TileId);
