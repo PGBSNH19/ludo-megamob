@@ -24,9 +24,9 @@
 
 As a ludo-player I want to be able to start a new ludo game where all peices are at the inital positons
 
-As a ludo-player I want to decide how many player should be in a new game
+As a ludo-player I want to decide how many player should be in a new game when creating a new game
 
-As a ludo-player, I want to be able to choose my color, to uniqely identify myself in game.e
+As a ludo-player I want to set my name and color when joining a new game
 
  As a ludo-player, I want to be able to load an unfinished game, to continue playing that game.
 
@@ -34,18 +34,22 @@ As a ludo-player, I want to be able look at game-history, to see past games.
 
 ## In game
 
-As a ludo-player, I want to to see who turn it currently is
+As a ludo player I want to be welcomed to the game
+
+As a ludo-player, I want to to see who turn it currently is all the time
 
 As a ludo-player, I want to be able to roll the dice, so I can move a game piece.
 
 As a ludo-player, I want to be able to choose which piece in the game to move.
 
-As a ludo-player, I want to be able to "knock over" a opponent gamepiece, so that game piece gets returned to the home of the player when landing on the same tile.
+As a ludo-player, I want to be able to "knock over" a opponent gamepiece, so that game piece gets returned to the home of the player when landing on the same tile this happens when two peices are at the same position (*collision position*).
 
-As a ludo-player, I want to be able to move my game piece to the goal position, so I can get points.
+As a ludo-player, I want to be able to move my game piece to the *goal position*, so I can get points.
 
 As a ludo-player, I want to be able to keep track of how many points all players in the game have after each move
 
 As a ludo player I want to be declared as the winner when reaching 4 points
 
 As a ludo player I want to be allowed to move a game peice from home to the gameboard start position when hitting 1 or 6 with a dice, if the start position is empty
+
+As a ludo player if I het 6 with the dice will I be given an extra roll

@@ -1,4 +1,10 @@
 # Documentation
 
-Use this file to fill in your documentation
+The documentation consist of the following parts:
+
+* [User stories](UserStories.md)
+
+* [Flowdiagram](ludoflow.drawio)
+
+  
 
