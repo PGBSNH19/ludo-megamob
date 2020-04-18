@@ -7,6 +7,7 @@ namespace LudoGameEngine
     public class GameInteraction
     {
         private IGameIOController ioController;
+
         public GameInteraction(IGameIOController ioController)
         {
             this.ioController = ioController;
@@ -19,8 +20,6 @@ namespace LudoGameEngine
             ioController.ShowMessage("[1] Load a game");
             ioController.ShowMessage("[2] Show history");
             return ioController.GetIntFromMessage("Choose a option:");
-
-
         }
 
         private LudoGame game;

@@ -8,14 +8,12 @@ namespace LudoGameEngine.Tests
 {
     public class GameInteractionTests
     {
-
-
-
         [Fact]
         public void PlayerGetsWelcomeMessage()
         {
             //Arrange
             var gameIo = new ListIOController();
+            gameIo.Actions = new List<object>() { 0 };
             GameInteraction gi = new GameInteraction(gameIo);
 
             //Act
@@ -57,8 +55,6 @@ namespace LudoGameEngine.Tests
 
             //Assert
             Assert.StartsWith("Your new game have ID:", gameIo.Messages[12]);
-
-
 
             //As a ludo-player I want to be able to start a new ludo game where all peices are at the inital positons
         }
@@ -107,10 +103,6 @@ namespace LudoGameEngine.Tests
             //As a ludo-player I want to decide how many player should be in a new game when creating a new game
             throw new NotImplementedException();
         }
-
-
-
-
 
         [Fact]
         public void CanSeeCurrentPlayer()
@@ -172,7 +164,6 @@ namespace LudoGameEngine.Tests
         public void ExtraRollOn6()
         {
             //As a ludo player if I het 6 with the dice will I be given an extra roll
-            
         }
     }
 }
