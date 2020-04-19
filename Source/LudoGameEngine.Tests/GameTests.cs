@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -8,8 +7,6 @@ namespace LudoGameEngine.Tests
 {
     public class GameTests
     {
-
-
         [Fact]
         public void StartGame_StartsLudoGameWithOnePlayer_Exception()
         {
@@ -19,7 +16,6 @@ namespace LudoGameEngine.Tests
 
             // Act + Assert
             Assert.Throws<Exception>(() => sut.StartGame(lp));
-
         }
 
         [Fact]
@@ -35,10 +31,7 @@ namespace LudoGameEngine.Tests
 
             // Act + Assert
             Assert.Throws<Exception>(() => sut.StartGame(lp1, lp2, lp3, lp4, lp5));
-
         }
-
-
 
         [Fact]
         public void StartGame_StartsLudoGameWithNoPlayers_Exception()
@@ -48,10 +41,7 @@ namespace LudoGameEngine.Tests
 
             // Act + Assert
             Assert.Throws<Exception>(() => sut.StartGame());
-
         }
-
-
 
         [Fact]
         public void StartGame_StartsLudoGameWithTwoPlayer_CurrentPlayerIsPlayer1()
@@ -83,7 +73,6 @@ namespace LudoGameEngine.Tests
             Assert.NotEqual(Guid.Empty, sut.GameGuid);
         }
 
-
         [Fact]
         public void StartGame_StartsLudoGameWithFourPlayers_GameGuidWhichIsNotEmptyGuid()
         {
@@ -94,12 +83,11 @@ namespace LudoGameEngine.Tests
             LudoPlayer lp4 = new LudoPlayer();
             LudoGame sut = new LudoGame();
 
-            // Act 
+            // Act
             sut.StartGame(lp1, lp2, lp3, lp4);
 
             // Assert
             Assert.NotEqual(Guid.Empty, sut.GameGuid);
-
         }
 
         [Fact]
@@ -115,7 +103,6 @@ namespace LudoGameEngine.Tests
 
             // Assert
             Assert.Equal("player1", sut.CurrentPlayer.PlayerName);
-
         }
 
         [Theory]

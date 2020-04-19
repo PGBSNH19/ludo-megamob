@@ -32,7 +32,5 @@ namespace LudoGameEngine
 
             return CurrentPlayer;
         }
-
-
     }
 }

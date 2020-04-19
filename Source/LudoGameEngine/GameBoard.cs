@@ -7,9 +7,10 @@ namespace LudoGameEngine
         private const int NUMBER_OF_TILES_ON_BOARD = 57;
         private int lastPlayerStartTile = 0;
 
-        public int NumberOfTilesOnboard { get { return NUMBER_OF_TILES_ON_BOARD;  } }
+        public int NumberOfTilesOnboard { get { return NUMBER_OF_TILES_ON_BOARD; } }
 
-        public GameBoard() {
+        public GameBoard()
+        {
             Pieces = new List<Piece>();
         }
 
@@ -21,11 +22,11 @@ namespace LudoGameEngine
             {
                 Pieces.Add(new Piece()
                 {
-                    TileId = i*-1,
+                    TileId = i * -1,
                     Player = player
                 });
             }
-            lastPlayerStartTile =+ NUMBER_OF_TILES_ON_BOARD;
+            lastPlayerStartTile = +NUMBER_OF_TILES_ON_BOARD;
         }
     }
 }

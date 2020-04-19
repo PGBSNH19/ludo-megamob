@@ -7,7 +7,9 @@ namespace LudoGameEngine
     public interface IGameIOController
     {
         void ShowMessage(string message);
+
         int GetIntFromMessage(string v);
+
         string GetStringFromMessage(string v);
     }
 }

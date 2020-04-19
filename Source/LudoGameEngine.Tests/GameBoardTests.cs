@@ -7,7 +7,6 @@ namespace LudoGameEngine.Tests
 {
     public class GameBoardTests
     {
-
         [Fact]
         public void AddPiecesWithPlayer_TwoPlayers_AllPiecesAreAtPosition()
         {
@@ -29,7 +28,6 @@ namespace LudoGameEngine.Tests
             Assert.Equal(-2, sut.Pieces[5].TileId);
             Assert.Equal(-3, sut.Pieces[6].TileId);
             Assert.Equal(-4, sut.Pieces[7].TileId);
-
         }
     }
 }

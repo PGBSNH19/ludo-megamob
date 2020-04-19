@@ -20,7 +20,6 @@ namespace LudoConsoleGame
                 throw new Exception("Unable to parse input to an int");
             }
             return parsedInt;
-
         }
 
         public string GetStringFromMessage(string message)

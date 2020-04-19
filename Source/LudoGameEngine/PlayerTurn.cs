@@ -8,6 +8,7 @@ namespace LudoGameEngine
     {
         private LudoPlayer player;
         private GameBoard gameboard;
+
         public PlayerTurn(LudoPlayer player, GameBoard gameboard)
         {
             this.player = player;

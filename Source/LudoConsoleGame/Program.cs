@@ -3,9 +3,9 @@ using System;
 
 namespace LudoConsoleGame
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             GameInteraction gi = new GameInteraction(new ConsoleIOController());
             gi.StartInteractiveLudoGame();

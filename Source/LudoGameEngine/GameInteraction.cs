@@ -7,7 +7,11 @@ namespace LudoGameEngine
     public class GameInteraction
     {
         private IGameIOController ioController;
+
+        // Dessa tre var scopade och game var privat så jag kunde inte komma åt
+        // dom i testerna´ändrade så att dom kunde vara publica.
         public List<LudoPlayer> players = new List<LudoPlayer>();
+
         public LudoPlayer player = new LudoPlayer();
         public LudoGame game = new LudoGame();
 

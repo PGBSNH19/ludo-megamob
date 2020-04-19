@@ -4,7 +4,6 @@ namespace LudoGameEngine
 {
     public class LudoPlayer
     {
-
         public LudoPlayer()
         {
             PlayerName = string.Empty;
