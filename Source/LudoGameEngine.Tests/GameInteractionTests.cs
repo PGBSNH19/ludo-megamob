@@ -13,7 +13,7 @@ namespace LudoGameEngine.Tests
         {
             //Arrange
             var gameIo = new ListIOController();
-            gameIo.Actions = new List<object>() { 0 };
+            gameIo.Actions = new List<object>();
             GameInteraction gi = new GameInteraction(gameIo);
 
             //Act
@@ -94,13 +94,20 @@ namespace LudoGameEngine.Tests
         public void PossibleToSetNameAndColor()
         {
             //As a ludo-player I want to set my name and color when joining a new game
-            throw new NotImplementedException();
+            var gameIo = new ListIOController();
+            gameIo.Actions = new List<object>() { 2, "Andre", "Red", "Morad", "Blue" };
+            GameInteraction gi = new GameInteraction(gameIo);
+            gi.ChooseMenuOption();
+
+            Assert.Equal("Andre", gi.players[0].PlayerName);
+            Assert.Equal("Red", gi.players[0].Color);
         }
 
         [Fact]
         public void CanProviceNumberOfPlayers()
         {
             //As a ludo-player I want to decide how many player should be in a new game when creating a new game
+
             throw new NotImplementedException();
         }
 

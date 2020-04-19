@@ -7,6 +7,9 @@ namespace LudoGameEngine
     public class GameInteraction
     {
         private IGameIOController ioController;
+        public List<LudoPlayer> players = new List<LudoPlayer>();
+        public LudoPlayer player = new LudoPlayer();
+        public LudoGame game = new LudoGame();
 
         public GameInteraction(IGameIOController ioController)
         {
@@ -22,23 +25,18 @@ namespace LudoGameEngine
             return ioController.GetIntFromMessage("Choose a option:");
         }
 
-        private LudoGame game;
-
         public void ChooseMenuOption()
         {
             int numberOfPlayers = ioController.GetIntFromMessage("How many players [2-4]:");
-            List<LudoPlayer> players = new List<LudoPlayer>();
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 ioController.ShowMessage($"Player {i}:");
-                var player = new LudoPlayer();
                 player.Index = i;
                 player.PlayerName = ioController.GetStringFromMessage($"What is the name of Player {i}:");
                 player.Color = ioController.GetStringFromMessage($"What color is player {i}:");
                 players.Add(player);
             }
 
-            game = new LudoGame();
             game.StartGame(players.ToArray());
             ioController.ShowMessage($"Your new game have ID: {game.GameGuid}");
         }

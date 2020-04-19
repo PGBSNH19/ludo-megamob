@@ -9,9 +9,8 @@ namespace LudoGameEngine.Tests.TestDubbles
         public List<string> Messages { get; set; }
         public List<object> Actions { get; set; }
 
-        private int currentAction;
+        public int currentAction;
 
-    
         public ListIOController()
         {
             currentAction = 0;
